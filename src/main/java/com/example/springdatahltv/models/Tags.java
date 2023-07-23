@@ -19,7 +19,13 @@ public class Tags extends BaseEntity{
     private void setTagname(String tagname) {
         this.tagname = tagname;
     }
+    public Set<PostsTags> getPostsTags() {
+        return postsTags;
+    }
 
+    public void setPostsTags(Set<PostsTags> postsTags) {
+        this.postsTags = postsTags;
+    }
     public Tags(String tagname) {
         this.tagname = tagname;
     }
@@ -37,11 +43,5 @@ public class Tags extends BaseEntity{
     @Cascade(org.hibernate.annotations.CascadeType.PERSIST)
     private Set<PostsTags> postsTags = new HashSet<>();
 
-    public Set<PostsTags> getPostsTags() {
-        return postsTags;
-    }
 
-    public void setPostsTags(Set<PostsTags> postsTags) {
-        this.postsTags = postsTags;
-    }
 }

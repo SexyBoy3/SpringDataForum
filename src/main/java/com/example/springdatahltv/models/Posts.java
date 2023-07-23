@@ -32,7 +32,21 @@ public class Posts extends BaseEntity{
     private void setContent(String content) {
         this.content = content;
     }
+    public Users getUsers() {
+        return users;
+    }
 
+    public void setUsers(Users users) {
+        this.users = users;
+    }
+
+    public Set<PostsTags> getPostsTags() {
+        return postsTags;
+    }
+
+    public void setPostsTags(Set<PostsTags> postsTags) {
+        this.postsTags = postsTags;
+    }
     public Posts(String title, String content) {
         this.title = title;
         this.content = content;
@@ -58,19 +72,5 @@ public class Posts extends BaseEntity{
     @Cascade(org.hibernate.annotations.CascadeType.PERSIST)
     private Users users;
 
-    public Users getUsers() {
-        return users;
-    }
 
-    public void setUsers(Users users) {
-        this.users = users;
-    }
-
-    public Set<PostsTags> getPostsTags() {
-        return postsTags;
-    }
-
-    public void setPostsTags(Set<PostsTags> postsTags) {
-        this.postsTags = postsTags;
-    }
 }

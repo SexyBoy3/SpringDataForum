@@ -1,8 +1,10 @@
 package com.example.springdatahltv.models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import org.hibernate.annotations.Cascade;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "USERS")
@@ -68,6 +70,14 @@ public class Users extends BaseEntity {
         this.age = age;
     }
 
+    public Set<Posts> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(Set<Posts> posts) {
+        this.posts = posts;
+    }
+
     public Users(String username, String email, String password, String status, String avatar_url, String age) {
         this.username = username;
         this.email = email;
@@ -91,4 +101,7 @@ public class Users extends BaseEntity {
                 '}';
     }
     // Links below
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "posts")
+    @Cascade(org.hibernate.annotations.CascadeType.PERSIST)
+    private Set<Posts> posts = new HashSet<>();
 }

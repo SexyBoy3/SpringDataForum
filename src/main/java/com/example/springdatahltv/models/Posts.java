@@ -14,6 +14,8 @@ public class Posts extends BaseEntity{
 
     @Column(name = "content")
     private String content;
+    @Column(name = "users_id")
+    private long users_id;
 
     public String getTitle() {
         return title;
@@ -46,9 +48,23 @@ public class Posts extends BaseEntity{
                 '}';
     }
     // Links below
+
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "posts")
     @Cascade(org.hibernate.annotations.CascadeType.PERSIST)
     private Set<PostsTags> postsTags = new HashSet<>();
+
+    @ManyToOne
+    @JoinColumn(name = "users_id", referencedColumnName = "id", insertable = false, updatable = false)
+    @Cascade(org.hibernate.annotations.CascadeType.PERSIST)
+    private Users users;
+
+    public Users getUsers() {
+        return users;
+    }
+
+    public void setUsers(Users users) {
+        this.users = users;
+    }
 
     public Set<PostsTags> getPostsTags() {
         return postsTags;

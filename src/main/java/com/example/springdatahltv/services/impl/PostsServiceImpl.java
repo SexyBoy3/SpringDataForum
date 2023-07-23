@@ -38,7 +38,7 @@ public class PostsServiceImpl implements PostsService<Long> {
     }
 
     @Override
-    public Optional<PostsDto> findMatch(Long id) {
+    public Optional<PostsDto> findPost(Long id) {
         return Optional.ofNullable(modelMapper.map(postsRepository.findById(id), PostsDto.class));
     }
 

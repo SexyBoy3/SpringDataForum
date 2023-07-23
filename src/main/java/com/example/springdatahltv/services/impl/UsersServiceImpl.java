@@ -34,7 +34,7 @@ public class UsersServiceImpl implements UsersService<Long> {
     }
 
     @Override
-    public Optional<UsersDto> findMatch(Long id) {
+    public Optional<UsersDto> findUser(Long id) {
         return Optional.ofNullable(modelMapper.map(usersRepository.findById(id), UsersDto.class));
     }
 

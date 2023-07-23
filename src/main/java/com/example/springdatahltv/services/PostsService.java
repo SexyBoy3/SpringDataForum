@@ -12,7 +12,7 @@ public interface PostsService<Long> {
 
     void deleteById(Long id);
 
-    Optional<PostsDto> findMatch(Long id);
+    Optional<PostsDto> findPost(Long id);
 
     List<PostsDto> getAll();
     List<PostsDto> findPostsByTagname(String tagname);

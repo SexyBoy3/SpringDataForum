@@ -12,7 +12,7 @@ public interface UsersService<Long> {
 
     void deleteById(Long id);
 
-    Optional<UsersDto> findMatch(Long id);
+    Optional<UsersDto> findUser(Long id);
 
     List<UsersDto> getAll();
     List<UsersDto> findUsersByAge(String age);

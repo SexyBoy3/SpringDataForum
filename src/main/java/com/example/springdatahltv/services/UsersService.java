@@ -5,7 +5,7 @@ import com.example.springdatahltv.dtos.UsersDto;
 import java.util.List;
 import java.util.Optional;
 
-public interface UsersService {
+public interface UsersService<Long> {
     UsersDto add(UsersDto users);
 
     void delete(UsersDto users);

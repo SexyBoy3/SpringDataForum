@@ -5,7 +5,7 @@ import com.example.springdatahltv.dtos.PostsDto;
 import java.util.List;
 import java.util.Optional;
 
-public interface PostsService {
+public interface PostsService<Long> {
     PostsDto add(PostsDto posts);
 
     void delete(PostsDto posts);

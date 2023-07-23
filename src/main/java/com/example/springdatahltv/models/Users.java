@@ -24,7 +24,7 @@ public class Users extends BaseEntity {
         return username;
     }
 
-    public void setUsername(String username) {
+    private void setUsername(String username) {
         this.username = username;
     }
 
@@ -32,7 +32,7 @@ public class Users extends BaseEntity {
         return email;
     }
 
-    public void setEmail(String email) {
+    private void setEmail(String email) {
         this.email = email;
     }
 
@@ -40,7 +40,7 @@ public class Users extends BaseEntity {
         return password;
     }
 
-    public void setPassword(String password) {
+    private void setPassword(String password) {
         this.password = password;
     }
 
@@ -48,7 +48,7 @@ public class Users extends BaseEntity {
         return status;
     }
 
-    public void setStatus(String status) {
+    private void setStatus(String status) {
         this.status = status;
     }
 
@@ -56,7 +56,7 @@ public class Users extends BaseEntity {
         return avatar_url;
     }
 
-    public void setAvatar_url(String avatar_url) {
+    private void setAvatar_url(String avatar_url) {
         this.avatar_url = avatar_url;
     }
 
@@ -64,7 +64,7 @@ public class Users extends BaseEntity {
         return age;
     }
 
-    public void setAge(String age) {
+    private void setAge(String age) {
         this.age = age;
     }
 
@@ -90,4 +90,5 @@ public class Users extends BaseEntity {
                 ", id=" + id +
                 '}';
     }
+    // Links below
 }

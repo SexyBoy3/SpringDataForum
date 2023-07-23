@@ -1,0 +1,46 @@
+package com.example.springdatahltv.models;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "Posts_Tags")
+public class PostsTags extends BaseEntity{
+    @Column(name = "posts_id")
+    private long posts_id;
+    @Column(name = "tags_id")
+    private long tags_id;
+
+    public long getPosts_id() {
+        return posts_id;
+    }
+
+    public long getTags_id() {
+        return tags_id;
+    }
+
+    private void setPosts_id(long posts_id) {
+        this.posts_id = posts_id;
+    }
+
+    private void setTags_id(long tags_id) {
+        this.tags_id = tags_id;
+    }
+
+    public PostsTags(long posts_id, long tags_id) {
+        this.posts_id = posts_id;
+        this.tags_id = tags_id;
+    }
+    protected PostsTags(){}
+
+    @Override
+    public String toString() {
+        return "PostsTags{" +
+                "posts_id=" + posts_id +
+                ", tags_id=" + tags_id +
+                ", id=" + id +
+                '}';
+    }
+    // Links below
+}

@@ -1,8 +1,10 @@
 package com.example.springdatahltv.models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import org.hibernate.annotations.Cascade;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "Tags")
@@ -31,4 +33,15 @@ public class Tags extends BaseEntity{
                 '}';
     }
     // Links below
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "tags")
+    @Cascade(org.hibernate.annotations.CascadeType.PERSIST)
+    private Set<PostsTags> postsTags = new HashSet<>();
+
+    public Set<PostsTags> getPostsTags() {
+        return postsTags;
+    }
+
+    public void setPostsTags(Set<PostsTags> postsTags) {
+        this.postsTags = postsTags;
+    }
 }

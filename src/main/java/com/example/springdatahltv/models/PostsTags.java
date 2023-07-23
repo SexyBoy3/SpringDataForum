@@ -1,15 +1,13 @@
 package com.example.springdatahltv.models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "Posts_Tags")
 public class PostsTags extends BaseEntity{
-    @Column(name = "posts_id")
+    @Column(name = "posts_id", nullable = false)
     private long posts_id;
-    @Column(name = "tags_id")
+    @Column(name = "tags_id", nullable = false)
     private long tags_id;
 
     public long getPosts_id() {
@@ -43,4 +41,14 @@ public class PostsTags extends BaseEntity{
                 '}';
     }
     // Links below
+    @ManyToOne
+    @JoinColumn(
+            name = "posts_id",
+            insertable = false, updatable = false)
+    private Posts posts;
+    @ManyToOne
+    @JoinColumn(
+            name = "tags_id",
+            insertable = false, updatable = false)
+    private Tags tags;
 }

@@ -12,7 +12,7 @@ public interface TagsService<Long> {
 
     void deleteById(Long id);
 
-    Optional<TagsDto> findTags(Long id);
+    Optional<TagsDto> findTag(Long id);
 
     List<TagsDto> getAll();
 }

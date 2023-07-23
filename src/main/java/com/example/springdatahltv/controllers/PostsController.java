@@ -3,7 +3,7 @@ package com.example.springdatahltv.controllers;
 
 import com.example.springdatahltv.controllers.exceptions.UsersNotFoundException;
 import com.example.springdatahltv.dtos.PostsDto;
-import com.example.springdatahltv.dtos.UsersDto;
+
 import com.example.springdatahltv.services.PostsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -30,7 +30,7 @@ public class PostsController {
         postsService.deleteById(id);}
 
     @RequestMapping(value = "/posts/query1", method = RequestMethod.GET)
-    List<UsersDto> findPostsByTagname (
+    List<PostsDto> findPostsByTagname (
             @RequestParam(name = "tagname") String tagname) throws Throwable {
         return postsService.findPostsByTagname(tagname);
     }

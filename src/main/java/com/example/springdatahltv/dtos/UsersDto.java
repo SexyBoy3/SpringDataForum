@@ -5,7 +5,7 @@ import com.example.springdatahltv.models.Posts;
 import java.util.HashSet;
 import java.util.Set;
 
-public class UsersDto{
+public class UsersDto {
     private long id;
     public void setId(long id) {this.id = id;}
     public long getId() {return id;}

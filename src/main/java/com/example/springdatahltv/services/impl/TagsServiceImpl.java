@@ -41,7 +41,7 @@ public class TagsServiceImpl implements TagsService<Long> {
     }
 
     @Override
-    public Optional<TagsDto> findTags(Long id) {
+    public Optional<TagsDto> findTag(Long id) {
         return Optional.ofNullable(modelMapper.map(tagsRepository.findById(id), TagsDto.class));
 
     }

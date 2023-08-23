@@ -39,7 +39,7 @@ public class Tags extends BaseEntity{
                 '}';
     }
     // Links below
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "tags")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "tags")
     @Cascade(org.hibernate.annotations.CascadeType.PERSIST)
     private Set<PostsTags> postsTags = new HashSet<>();
 

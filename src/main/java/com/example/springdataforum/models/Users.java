@@ -1,5 +1,7 @@
 package com.example.springdataforum.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import org.hibernate.annotations.Cascade;
 
@@ -101,6 +103,7 @@ public class Users extends BaseEntity {
                 '}';
     }
     // Links below
+    @JsonIgnore
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "users") // Lazy не заводится, узнать почему
     @Cascade(org.hibernate.annotations.CascadeType.PERSIST)
     private Set<Posts> posts;

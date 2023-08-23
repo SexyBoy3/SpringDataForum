@@ -1,5 +1,6 @@
 package com.example.springdataforum.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import org.hibernate.annotations.Cascade;
 
@@ -63,10 +64,12 @@ public class Posts extends BaseEntity{
     }
     // Links below
 
+    @JsonIgnore
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "posts")
     @Cascade(org.hibernate.annotations.CascadeType.PERSIST)
     private Set<PostsTags> postsTags = new HashSet<>();
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "users_id", referencedColumnName = "id", insertable = false, updatable = false)
     @Cascade(org.hibernate.annotations.CascadeType.PERSIST)

@@ -1,5 +1,7 @@
 package com.example.springdataforum.dtos;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 public class PostsDto {
     private long id;
     public void setId(long id) {this.id = id;}
@@ -8,6 +10,7 @@ public class PostsDto {
     private String title;
     private String content;
     private long users_id;
+    @JsonIgnore
     private UsersDto usersDto;
     public long getUsers_id() {
         return users_id;

@@ -1,6 +1,7 @@
 package com.example.springdataforum.dtos;
 
 import com.example.springdataforum.models.Posts;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -15,6 +16,7 @@ public class UsersDto {
     private String status;
     private String avatar_url;
     private String age;
+    @JsonIgnore
     Set<Posts> posts = new HashSet<>();
 
     public Set<Posts> getPosts() {

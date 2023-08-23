@@ -103,8 +103,9 @@ public class Users extends BaseEntity {
                 '}';
     }
     // Links below
-    @JsonIgnore
+
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "users") // Lazy не заводится, узнать почему
     @Cascade(org.hibernate.annotations.CascadeType.PERSIST)
+    @JsonIgnore
     private Set<Posts> posts;
 }

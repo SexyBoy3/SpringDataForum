@@ -2,6 +2,7 @@ package com.example.springdataforum.init;
 
 
 import com.example.springdataforum.dtos.PostsDto;
+import com.example.springdataforum.dtos.PostsTagsDto;
 import com.example.springdataforum.dtos.TagsDto;
 import com.example.springdataforum.dtos.UsersDto;
 import com.example.springdataforum.services.PostsService;
@@ -45,8 +46,12 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
         PostsDto posts2 = new PostsDto(2,"Kotlin","Based");
         posts1.setUsers_id(1);
         posts2.setUsers_id(2);
-
         postsService.add(posts1); postsService.add(posts2);
+
+        PostsTagsDto postsTags1 = new PostsTagsDto(posts1.getId(), tags1.getId());
+        PostsTagsDto postsTags2 = new PostsTagsDto(posts2.getId(), tags2.getId());
+        postsTagsService.add(postsTags1); postsTagsService.add(postsTags2);
+
 
 
 

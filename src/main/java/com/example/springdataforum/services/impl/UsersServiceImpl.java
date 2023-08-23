@@ -2,6 +2,7 @@ package com.example.springdataforum.services.impl;
 
 
 import com.example.springdataforum.dtos.UsersDto;
+import com.example.springdataforum.models.Users;
 import com.example.springdataforum.repositories.UsersRepository;
 import com.example.springdataforum.services.UsersService;
 import org.modelmapper.ModelMapper;
@@ -20,7 +21,8 @@ public class UsersServiceImpl implements UsersService<Long> {
     ModelMapper modelMapper;
     @Override
     public UsersDto add(UsersDto users) {
-        return null;
+        Users u = modelMapper.map(users, Users.class);
+        return modelMapper.map(usersRepository.save(u), UsersDto.class);
     }
 
     @Override

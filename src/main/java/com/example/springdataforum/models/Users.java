@@ -101,7 +101,7 @@ public class Users extends BaseEntity {
                 '}';
     }
     // Links below
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "users")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "users") // Lazy не заводится, узнать почему
     @Cascade(org.hibernate.annotations.CascadeType.PERSIST)
-    private Set<Posts> posts = new HashSet<>();
+    private Set<Posts> posts;
 }

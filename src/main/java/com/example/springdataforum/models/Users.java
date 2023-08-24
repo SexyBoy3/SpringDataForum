@@ -105,7 +105,7 @@ public class Users extends BaseEntity {
     // Links below
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "users") // Lazy не заводится, узнать почему
-    @Cascade(org.hibernate.annotations.CascadeType.PERSIST)
+    @Cascade(org.hibernate.annotations.CascadeType.DELETE_ORPHAN)
     @JsonIgnore
     private Set<Posts> posts;
 }

@@ -57,10 +57,21 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
 
 
 
+
     }
+    private void printPostsByTagname(String tagname){
+        postsService.findPostsByTagname(tagname).forEach(System.out::println);
+    }
+    private void printUsersByAge(String age){
+        usersService.findUsersByAge(age).forEach(System.out::println);
+    }
+
     @Override
     public void run(String... args) throws Exception {
         seedData();
+        printPostsByTagname("Super");
+        printUsersByAge("21");
+
         System.out.println("End");
 
     }

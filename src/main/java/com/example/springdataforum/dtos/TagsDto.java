@@ -1,6 +1,7 @@
 package com.example.springdataforum.dtos;
 
 import com.example.springdataforum.models.PostsTags;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -9,6 +10,7 @@ public class TagsDto {
     private long id;
     public void setId(long id) {this.id = id;}
     public long getId() {return id;}
+    @JsonIgnore
     public Set<PostsTags> postsTags = new HashSet<>();
 
 

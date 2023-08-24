@@ -40,7 +40,7 @@ public class Tags extends BaseEntity{
     }
     // Links below
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "tags")
-    @Cascade(org.hibernate.annotations.CascadeType.PERSIST)
+    @Cascade(org.hibernate.annotations.CascadeType.DELETE_ORPHAN)
     private Set<PostsTags> postsTags = new HashSet<>();
 
 

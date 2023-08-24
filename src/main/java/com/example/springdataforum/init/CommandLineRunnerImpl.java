@@ -58,6 +58,7 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
 
 
 
+
     }
     private void printPostsByTagname(String tagname){
         postsService.findPostsByTagname(tagname).forEach(System.out::println);

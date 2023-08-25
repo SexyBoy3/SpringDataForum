@@ -88,7 +88,9 @@ public class Users extends BaseEntity {
         this.avatar_url = avatar_url;
         this.age = age;
     }
-    protected Users(){}
+
+    protected Users() {
+    }
 
     @Override
     public String toString() {

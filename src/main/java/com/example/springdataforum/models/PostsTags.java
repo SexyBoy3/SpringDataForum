@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "Posts_Tags")
-public class PostsTags extends BaseEntity{
+public class PostsTags extends BaseEntity {
     @Column(name = "posts_id", nullable = false)
     private long posts_id;
     @Column(name = "tags_id", nullable = false)
@@ -30,7 +30,9 @@ public class PostsTags extends BaseEntity{
         this.posts_id = posts_id;
         this.tags_id = tags_id;
     }
-    protected PostsTags(){}
+
+    protected PostsTags() {
+    }
 
     @Override
     public String toString() {
@@ -40,6 +42,7 @@ public class PostsTags extends BaseEntity{
                 ", id=" + id +
                 '}';
     }
+
     // Links below
     @ManyToOne
     @JoinColumn(

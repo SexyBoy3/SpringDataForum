@@ -19,6 +19,7 @@ public class TagsServiceImpl implements TagsService<Long> {
     TagsRepository tagsRepository;
     @Autowired
     ModelMapper modelMapper;
+
     @Override
     public TagsDto add(TagsDto tags) {
         Tags t = modelMapper.map(tags, Tags.class);

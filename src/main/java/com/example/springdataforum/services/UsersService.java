@@ -15,5 +15,6 @@ public interface UsersService<Long> {
     Optional<UsersDto> findUser(Long id);
 
     List<UsersDto> getAll();
+
     List<UsersDto> findUsersByAge(String age);
 }

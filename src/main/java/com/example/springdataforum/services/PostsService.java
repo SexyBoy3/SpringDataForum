@@ -15,5 +15,6 @@ public interface PostsService<Long> {
     Optional<PostsDto> findPost(Long id);
 
     List<PostsDto> getAll();
+
     List<PostsDto> findPostsByTagname(String tagname);
 }

@@ -19,6 +19,7 @@ public class UsersServiceImpl implements UsersService<Long> {
     UsersRepository usersRepository;
     @Autowired
     ModelMapper modelMapper;
+
     @Override
     public UsersDto add(UsersDto users) {
         Users u = modelMapper.map(users, Users.class);
@@ -27,7 +28,7 @@ public class UsersServiceImpl implements UsersService<Long> {
 
     @Override
     public void delete(UsersDto users) {
-    usersRepository.deleteById(users.getId());
+        usersRepository.deleteById(users.getId());
     }
 
     @Override

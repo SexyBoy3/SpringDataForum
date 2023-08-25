@@ -8,8 +8,14 @@ import java.util.Set;
 
 public class UsersDto {
     private long id;
-    public void setId(long id) {this.id = id;}
-    public long getId() {return id;}
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public long getId() {
+        return id;
+    }
 
     private String username;
     private String password;
@@ -75,7 +81,9 @@ public class UsersDto {
         this.avatar_url = avatar_url;
         this.age = age;
     }
-    public UsersDto(){}
+
+    public UsersDto() {
+    }
 
     @Override
     public String toString() {

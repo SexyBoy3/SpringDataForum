@@ -19,6 +19,7 @@ public class PostsServiceImpl implements PostsService<Long> {
     PostsRepository postsRepository;
     @Autowired
     ModelMapper modelMapper;
+
     @Override
     public PostsDto add(PostsDto posts) {
         Posts p = modelMapper.map(posts, Posts.class);
@@ -28,7 +29,7 @@ public class PostsServiceImpl implements PostsService<Long> {
 
     @Override
     public void delete(PostsDto posts) {
-            postsRepository.deleteById(posts.getId());
+        postsRepository.deleteById(posts.getId());
     }
 
     @Override

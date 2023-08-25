@@ -8,8 +8,15 @@ import java.util.Set;
 
 public class TagsDto {
     private long id;
-    public void setId(long id) {this.id = id;}
-    public long getId() {return id;}
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public long getId() {
+        return id;
+    }
+
     @JsonIgnore
     public Set<PostsTags> postsTags = new HashSet<>();
 
@@ -28,10 +35,14 @@ public class TagsDto {
         this.id = id;
         this.tagname = tagname;
     }
-    public TagsDto(){}
+
+    public TagsDto() {
+    }
+
     public Set<PostsTags> getPostsTags() {
         return postsTags;
     }
+
     public void setPostsTags(Set<PostsTags> postsTags) {
         this.postsTags = postsTags;
     }

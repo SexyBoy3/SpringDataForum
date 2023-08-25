@@ -8,7 +8,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "Tags")
-public class Tags extends BaseEntity{
+public class Tags extends BaseEntity {
     @Column(name = "tagname")
     private String tagname;
 
@@ -19,6 +19,7 @@ public class Tags extends BaseEntity{
     private void setTagname(String tagname) {
         this.tagname = tagname;
     }
+
     public Set<PostsTags> getPostsTags() {
         return postsTags;
     }
@@ -26,10 +27,13 @@ public class Tags extends BaseEntity{
     public void setPostsTags(Set<PostsTags> postsTags) {
         this.postsTags = postsTags;
     }
+
     public Tags(String tagname) {
         this.tagname = tagname;
     }
-    protected Tags(){}
+
+    protected Tags() {
+    }
 
     @Override
     public String toString() {
@@ -38,6 +42,7 @@ public class Tags extends BaseEntity{
                 ", id=" + id +
                 '}';
     }
+
     // Links below
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "tags")
     @Cascade(org.hibernate.annotations.CascadeType.DELETE_ORPHAN)

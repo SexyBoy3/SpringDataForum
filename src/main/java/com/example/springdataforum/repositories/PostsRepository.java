@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface PostsRepository extends JpaRepository<Posts,Long> {
+public interface PostsRepository extends JpaRepository<Posts, Long> {
 
     @Query(value = "SELECT p FROM Posts AS p " +
             "INNER JOIN PostsTags as pt ON p.id = pt.posts_id " +

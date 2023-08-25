@@ -14,10 +14,11 @@ import java.util.stream.Collectors;
 
 @Service
 public class PostsTagsServiceImpl implements PostsTagsService<Long> {
- @Autowired
+    @Autowired
     PostTagsRepository postTagsRepository;
- @Autowired
+    @Autowired
     ModelMapper modelMapper;
+
     @Override
     public PostsTagsDto add(PostsTagsDto postsTags) {
         PostsTags pt = modelMapper.map(postsTags, PostsTags.class);
@@ -27,12 +28,13 @@ public class PostsTagsServiceImpl implements PostsTagsService<Long> {
 
     @Override
     public void delete(PostsTagsDto postsTags) {
-    postTagsRepository.deleteById(postsTags.getId());
+        postTagsRepository.deleteById(postsTags.getId());
     }
 
     @Override
     public void deleteById(Long id) {
-    postTagsRepository.deleteById(id); }
+        postTagsRepository.deleteById(id);
+    }
 
     @Override
     public Optional<PostsTagsDto> findPostsTags(Long id) {

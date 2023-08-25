@@ -2,8 +2,14 @@ package com.example.springdataforum.dtos;
 
 public class PostsTagsDto {
     private long id;
-    public void setId(long id) {this.id = id;}
-    public long getId() {return id;}
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public long getId() {
+        return id;
+    }
 
     private long posts_id;
     private long tags_id;
@@ -30,7 +36,9 @@ public class PostsTagsDto {
         this.posts_id = posts_id;
         this.tags_id = tags_id;
     }
-    public PostsTagsDto(){}
+
+    public PostsTagsDto() {
+    }
 
     @Override
     public String toString() {

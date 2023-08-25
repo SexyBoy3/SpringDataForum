@@ -14,20 +14,24 @@ public class TagsController {
     private TagsService tagsService;
 
     @GetMapping("/tags")
-    Iterable<TagsDto> all() {return tagsService.getAll();}
+    Iterable<TagsDto> all() {
+        return tagsService.getAll();
+    }
+
     @GetMapping("/tags/{id}")
     TagsDto one(@PathVariable Long id) throws Throwable {
         return (TagsDto) tagsService.findTag(id).orElseThrow(() -> new UsersNotFoundException(id));
     }
 
     @PostMapping("/tags")
-    TagsDto newUser(@RequestBody TagsDto newTag) {return tagsService.add(newTag);}
+    TagsDto newUser(@RequestBody TagsDto newTag) {
+        return tagsService.add(newTag);
+    }
 
     @DeleteMapping("/tags/{id}")
     void deleteUser(@PathVariable Long id) {
-        tagsService.deleteById(id);}
-
-
+        tagsService.deleteById(id);
+    }
 
 
 }

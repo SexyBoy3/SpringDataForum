@@ -9,7 +9,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "Posts")
-public class Posts extends BaseEntity{
+public class Posts extends BaseEntity {
     @Column(name = "title")
     private String title;
 
@@ -33,6 +33,7 @@ public class Posts extends BaseEntity{
     private void setContent(String content) {
         this.content = content;
     }
+
     public Users getUsers() {
         return users;
     }
@@ -48,11 +49,14 @@ public class Posts extends BaseEntity{
     public void setPostsTags(Set<PostsTags> postsTags) {
         this.postsTags = postsTags;
     }
+
     public Posts(String title, String content) {
         this.title = title;
         this.content = content;
     }
-    protected Posts(){}
+
+    protected Posts() {
+    }
 
     @Override
     public String toString() {

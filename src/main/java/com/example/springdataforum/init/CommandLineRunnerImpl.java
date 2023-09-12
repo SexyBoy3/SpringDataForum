@@ -34,8 +34,8 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
 
     private void seedData() throws IOException {
 
-        UsersDto users1 = new UsersDto(1, "Panda", "1234", "Clever", "ya.ru", "21");
-        UsersDto users2 = new UsersDto(2, "KittyCat124", "1234", "Meow", "ya.ru", "21");
+        UsersDto users1 = new UsersDto(1, "Panda","ya@yandex.ru", "1234", "Clever", "ya.ru", "21");
+        UsersDto users2 = new UsersDto(2, "KittyCat124","ya@yandex.ru", "1234", "Meow", "ya.ru", "21");
         usersService.add(users1);
         usersService.add(users2);
 

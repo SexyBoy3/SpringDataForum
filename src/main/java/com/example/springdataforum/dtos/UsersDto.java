@@ -20,6 +20,7 @@ public class UsersDto {
     private String username;
     private String password;
     private String status;
+    private String email;
     private String avatar_url;
     private String age;
     @JsonIgnore
@@ -73,13 +74,22 @@ public class UsersDto {
         this.age = age;
     }
 
-    public UsersDto(long id, String username, String password, String status, String avatar_url, String age) {
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public UsersDto(long id, String username, String email, String password, String status, String avatar_url, String age) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.status = status;
         this.avatar_url = avatar_url;
         this.age = age;
+        this.email = email;
     }
 
     public UsersDto() {
@@ -92,6 +102,7 @@ public class UsersDto {
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", status='" + status + '\'' +
+                ", email='" + email + '\'' +
                 ", avatar_url='" + avatar_url + '\'' +
                 ", age='" + age + '\'' +
                 '}';

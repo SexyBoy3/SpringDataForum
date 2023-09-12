@@ -3,6 +3,7 @@ package com.example.springdataforum.controllers;
 
 import com.example.springdataforum.controllers.exceptions.UsersNotFoundException;
 
+import com.example.springdataforum.dtos.PostsDto;
 import com.example.springdataforum.dtos.UsersDto;
 import com.example.springdataforum.services.UsersService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +40,11 @@ public class UsersController {
     List<UsersDto> findUsersByAge(
             @RequestParam(name = "age") String age) throws Throwable {
         return usersService.findUsersByAge(age);
+    }
+    @RequestMapping(value = "/users/query2", method = RequestMethod.GET)
+    List<UsersDto> findUsersByTagname(
+            @RequestParam(name = "tagname") String tagname) throws Throwable {
+        return usersService.findUsersByTagname(tagname);
     }
 
 

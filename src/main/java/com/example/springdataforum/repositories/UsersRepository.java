@@ -15,6 +15,14 @@ public interface UsersRepository extends JpaRepository<Users, Long> {
     @Query(value = "SELECT u FROM Users AS u WHERE u.age = :age")
     List<Users> findAllByAge(@Param(value = "age") String age);
 
+    @Query(value = "SELECT u FROM Users AS u " +
+            "INNER JOIN Posts AS p ON u.id = p.users_id " +
+            "INNER JOIN PostsTags as pt ON p.id = pt.posts_id " +
+            "INNER JOIN Tags as t ON t.id = pt.tags_id " +
+            "WHERE t.tagname = :tagname"
+    )
+    List<Users> findAllByTagname(@Param(value = "tagname") String tagname);
+
     List<Users> findUsersByEmail(String email);
 
     List<Users> findUsersByAge(String age);

@@ -1,6 +1,7 @@
 package com.example.springdataforum.services.impl;
 
 
+import com.example.springdataforum.dtos.PostsDto;
 import com.example.springdataforum.dtos.UsersDto;
 import com.example.springdataforum.models.Users;
 import com.example.springdataforum.repositories.UsersRepository;
@@ -54,5 +55,11 @@ public class UsersServiceImpl implements UsersService<Long> {
         return usersRepository.findAllByAge(age).stream().map((u) ->
                 modelMapper.map(u, UsersDto.class)).collect(Collectors.toList());
 
+    }
+
+    @Override
+    public List<UsersDto> findUsersByTagname(String tagname) {
+        return usersRepository.findAllByTagname(tagname).stream().map((u) ->
+                modelMapper.map(u, UsersDto.class)).collect(Collectors.toList());
     }
 }

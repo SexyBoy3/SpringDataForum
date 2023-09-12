@@ -17,4 +17,6 @@ public interface UsersService<Long> {
     List<UsersDto> getAll();
 
     List<UsersDto> findUsersByAge(String age);
+
+    List<UsersDto> findUsersByTagname(String tagname);
 }
